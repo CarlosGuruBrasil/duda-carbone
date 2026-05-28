@@ -59,6 +59,7 @@ export default function MainExperience() {
           x: e.clientX,
           y: e.clientY,
           duration: 0.02,
+          rotation: (e.clientX + e.clientY) * 0.4,
         });
       }
     };
@@ -94,22 +95,45 @@ export default function MainExperience() {
     <div className="relative min-h-screen bg-[#f7f6f4] text-[#111111] selection:bg-rose-100 selection:text-[#c8384e] overflow-hidden">
       {/* Elemento de Cursor Customizado (Carregado apenas em telas grandes/desktops) */}
       <div className="hidden lg:block">
-        {/* Dot central */}
+        {/* Bola de tênis central */}
         <div
           ref={cursorDotRef}
-          className={`fixed top-0 left-0 rounded-full pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-all duration-75 ${
-            isHovering
-              ? "w-4 h-4 bg-[#c8384e] shadow-[0_0_12px_rgba(200,56,78,0.5)]"
-              : "w-2.5 h-2.5 bg-[#c8384e]/80"
-          }`}
-        />
+          className="fixed top-0 left-0 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-all duration-150 ease-out"
+          style={{
+            width: isHovering ? "36px" : "26px",
+            height: isHovering ? "36px" : "26px",
+          }}
+        >
+          <svg
+            viewBox="0 0 100 100"
+            className="w-full h-full drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]"
+          >
+            {/* Base da bola - Amarelo/Verde limão de tênis */}
+            <circle cx="50" cy="50" r="46" fill="#ccff00" stroke="#a0cc00" strokeWidth="2.5" />
+            {/* Linhas (costuras) brancas da bola de tênis */}
+            <path
+              d="M 28 8 A 45 45 0 0 0 28 92"
+              fill="none"
+              stroke="#ffffff"
+              strokeWidth="5.5"
+              strokeLinecap="round"
+            />
+            <path
+              d="M 72 8 A 45 45 0 0 1 72 92"
+              fill="none"
+              stroke="#ffffff"
+              strokeWidth="5.5"
+              strokeLinecap="round"
+            />
+          </svg>
+        </div>
         {/* Ring externo */}
         <div
           ref={cursorOutlineRef}
-          className={`fixed top-0 left-0 rounded-full pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-all duration-75 ${
+          className={`fixed top-0 left-0 rounded-full pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-all duration-150 ${
             isHovering
-              ? "w-10 h-10 border border-[#c8384e]/40 bg-[#c8384e]/5"
-              : "w-7 h-7 border border-black/20"
+              ? "w-14 h-14 border border-[#ccff00]/65 bg-[#ccff00]/5 shadow-[0_0_12px_rgba(204,255,0,0.2)]"
+              : "w-9 h-9 border border-[#a0cc00]/25 bg-[#a0cc00]/2"
           }`}
         />
       </div>
