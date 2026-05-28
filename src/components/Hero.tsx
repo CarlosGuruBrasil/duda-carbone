@@ -10,55 +10,64 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen overflow-hidden bg-[#f7f6f4]"
     >
-      {/* ── PHOTO – fills right portion, edge-to-edge on mobile ── */}
-      <div className="absolute inset-0 md:left-[42%]">
+      {/* ── ATHLETE PHOTO – wider area, top-anchored so she rises above ── */}
+      <div className="absolute inset-y-0 right-0 left-0 md:left-[28%]">
         <Image
           src="/foto_duda_patrocinio.jpeg"
           alt="Duda Carbone – tenista profissional brasileira"
           fill
           priority
-          className="object-cover object-[center_15%]"
-          sizes="100vw"
+          className="object-cover object-[58%_top]"
+          sizes="(max-width: 768px) 100vw, 72vw"
         />
-        {/* left-fade so text stays readable */}
-        <div className="absolute inset-0 bg-gradient-to-r from-[#f7f6f4] via-[#f7f6f4]/80 to-transparent md:via-[#f7f6f4]/40" />
-        {/* subtle bottom fade */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#f7f6f4]/60 via-transparent to-transparent" />
+        {/* Strong left fade – text stays readable, photo pops on the right */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#f7f6f4] via-[#f7f6f4]/75 via-30% to-transparent md:via-[#f7f6f4]/40 md:via-20%" />
+        {/* Subtle bottom fade */}
+        <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#f7f6f4]/80 to-transparent" />
+        {/* Top edge micro-fade */}
+        <div className="absolute top-0 left-0 right-0 h-20 bg-gradient-to-b from-[#f7f6f4]/30 to-transparent" />
       </div>
 
-      {/* ── CONTENT ── */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-10 min-h-screen flex flex-col justify-end pb-16 md:pb-20 pt-32">
-        <div className="max-w-lg">
+      {/* ── CONTENT: flag top · name + details bottom ── */}
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 min-h-screen flex flex-col justify-between pt-10 pb-14">
 
-          {/* Country + sport */}
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="flex items-center gap-2.5 mb-5"
-          >
-            <span className="text-2xl leading-none select-none">🇧🇷</span>
-            <span className="text-[11px] font-bold tracking-[0.22em] text-black/40 uppercase">
-              Brasil · Tênis Profissional
-            </span>
-          </motion.div>
+        {/* TOP – country + live indicator */}
+        <motion.div
+          initial={{ opacity: 0, y: -14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.55 }}
+          className="flex items-center gap-3 pt-2"
+        >
+          <span className="text-2xl leading-none select-none">🇧🇷</span>
+          <span className="text-[11px] font-bold tracking-[0.22em] text-black/40 uppercase">
+            Brasil · Tênis Profissional
+          </span>
+          <div className="ml-5 flex items-center gap-2 hidden sm:flex">
+            <span className="block w-1.5 h-1.5 rounded-full bg-[#c8384e] animate-pulse" />
+            <span className="text-[10px] text-black/25 tracking-[0.2em] uppercase">Temporada 2026</span>
+          </div>
+        </motion.div>
 
-          {/* Name */}
+        {/* BOTTOM – big name + supporting content */}
+        <div className="max-w-[640px]">
+
+          {/* ── HERO NAME – muito maior, invadindo a área da foto ── */}
           <motion.h1
-            initial={{ opacity: 0, y: 24 }}
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.08 }}
-            className="font-space font-black text-[clamp(3rem,8vw,6rem)] tracking-[-0.04em] text-[#111111] uppercase leading-[0.9] mb-7"
+            transition={{ duration: 0.8, delay: 0.07 }}
+            className="font-space font-black uppercase leading-[0.85] tracking-[-0.045em] text-[#111111] mb-8"
+            style={{ fontSize: "clamp(4.5rem, 11.5vw, 9.5rem)" }}
           >
             Duda<br />Carbone
           </motion.h1>
 
           {/* Key facts row */}
           <motion.div
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.18 }}
-            className="flex items-stretch gap-5 mb-8"
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="flex items-stretch gap-6 mb-8"
           >
             {[
               { v: "15", l: "Anos" },
@@ -79,11 +88,11 @@ export default function Hero() {
             ))}
           </motion.div>
 
-          {/* Achievements chips */}
+          {/* Achievement chips */}
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.26 }}
+            transition={{ duration: 0.6, delay: 0.28 }}
             className="flex flex-col gap-2 mb-9"
           >
             {[
@@ -106,18 +115,18 @@ export default function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.34 }}
+            transition={{ duration: 0.6, delay: 0.36 }}
             className="flex flex-wrap gap-3"
           >
             <a
               href="#patrocinio"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#c8384e] text-white text-sm font-bold tracking-wide hover:bg-[#b02f43] transition-colors shadow-[0_4px_20px_rgba(200,56,78,0.3)]"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#c8384e] text-white text-sm font-bold tracking-wide hover:bg-[#b02f43] transition-colors shadow-[0_4px_24px_rgba(200,56,78,0.3)]"
             >
               Seja Patrocinador
             </a>
             <a
               href="#sobre"
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-transparent border border-black/20 text-[#111] text-sm font-semibold tracking-wide hover:border-black/40 hover:bg-black/4 transition-all"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-transparent border border-black/20 text-[#111] text-sm font-semibold tracking-wide hover:border-black/40 hover:bg-black/4 transition-all"
             >
               Conheça a Atleta
             </a>
