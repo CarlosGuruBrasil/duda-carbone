@@ -1,0 +1,149 @@
+{
+  "hero": {
+    "quote": "Você não nasceu para ser comum",
+    "mainPhoto": "/foto_duda_patrocinio.jpeg",
+    "badge": "ATLETA PROFISSIONAL · 15 ANOS · BRASIL",
+    "description": "A maior aposta do futuro do tênis brasileiro nas quadras do mundo. Liderança, garra e alta performance.",
+    "socialLinks": [
+      { "icon": "🎥", "label": "TikTok", "href": "#" },
+      { "icon": "📸", "label": "Instagram", "href": "https://www.instagram.com/mduda_carbone/" },
+      { "icon": "▶️", "label": "YouTube", "href": "#" }
+    ],
+    "highlights": [
+      {
+        "icon": "🥇",
+        "title": "OURO JOGOS SUL-AM. JUVENTUDE",
+        "sub": "Duplas Mistas · Panamá 2026"
+      },
+      {
+        "icon": "🏆",
+        "title": "#1 RANKING COSAT SUL-AMERICANO",
+        "sub": "Liderança continental absoluta"
+      },
+      {
+        "icon": "🎾",
+        "title": "ROLAND GARROS JUNIOR SERIES 2026",
+        "sub": "Estreia vitoriosa no saibro de Paris"
+      }
+    ]
+  },
+  "videos": [
+    {
+      "id": "1",
+      "src": "/foto_real_duda_ouro.jpg",
+      "tag": "🥇 OURO · JOGOS SUL-AMERICANOS",
+      "portal": "Brasil no Tênis",
+      "title": "Ouro histórico nas duplas mistas no Panamá",
+      "desc": "Duda Carbone e Leo Storck dominam o torneio sul-americano, vencendo a final por duplo 6/1.",
+      "link": "https://brasilnotenis.com.br/maria-eduarda-carbone-e-leonardo-storck-conquistam-ouro-nas-duplas-mistas-nos-jogos-sul-americanos-da-juventude/"
+    },
+    {
+      "id": "2",
+      "src": "/img_roland.png",
+      "tag": "🎾 ROLAND GARROS JUNIOR",
+      "portal": "TenisBrasil · UOL",
+      "title": "Duda Carbone avança nas quadras de Paris",
+      "desc": "Excelente estreia no saibro sagrado do Roland Garros Junior Series 2026.",
+      "link": "https://tenisbrasil.uol.com.br/duda-carbone-e-vice-em-assuncao-e-tera-seu-melhor-ranking/"
+    },
+    {
+      "id": "3",
+      "src": "/foto_duda_patrocinio.jpeg",
+      "tag": "🥈 FINAL J200 ASSUNÇÃO",
+      "portal": "TenisBrasil · UOL",
+      "title": "Vice-campeã do Pascuas Bowl com campanha épica",
+      "desc": "Derrubou a favorita e cabeça de chave número 1 do torneio sul-americano no Paraguai.",
+      "link": "https://tenisbrasil.uol.com.br/duda-carbone-e-vice-em-assuncao-e-tera-seu-melhor-ranking/"
+    }
+  ],
+  "news": [
+    {
+      "id": "1",
+      "src": "/foto_real_duda_ouro.jpg",
+      "pub": "Brasil no Tênis",
+      "date": "24 Abr 2026",
+      "title": "Duda Carbone e Leo Storck Conquistam Ouro nos Jogos Sul-Americanos",
+      "desc": "A dupla brasileira foi impecável: 6/2 e 6/0 na semifinal, seguido de duplo 6/1 na decisão de ouro no Panamá.",
+      "link": "https://brasilnotenis.com.br/maria-eduarda-carbone-e-leonardo-storck-conquistam-ouro-nas-duplas-mistas-nos-jogos-sul-americanos-da-juventude/"
+    },
+    {
+      "id": "2",
+      "src": "/img_roland.png",
+      "pub": "TenisBrasil · UOL",
+      "date": "05 Abr 2026",
+      "title": "Duda Carbone é Vice em Assunção e Alcança Seu Melhor Ranking",
+      "desc": "Excelente campanha no Pascuas Bowl paraguaio (ITF J200), superando tenistas do top 60 juvenil do mundo.",
+      "link": "https://tenisbrasil.uol.com.br/duda-carbone-e-vice-em-assuncao-e-tera-seu-melhor-ranking/"
+    },
+    {
+      "id": "3",
+      "src": "/foto_duda_patrocinio.jpeg",
+      "pub": "TenisBrasil · UOL",
+      "date": "10 Nov 2025",
+      "title": "Duda Carbone Marca Primeira Vitória Profissional aos 15 anos",
+      "desc": "Ao vencer na estreia do ITF W15 de Criciúma, a catarinense garante seus primeiros pontos oficiais no ranking WTA.",
+      "link": "https://tenisbrasil.uol.com.br/duda-carbone-marca-1a-vitoria-profissional-aos-15-anos-em-criciuma/"
+    },
+    {
+      "id": "4",
+      "src": "/foto_duda_vencedora.jpeg",
+      "pub": "TenisBrasil · UOL",
+      "date": "12 Nov 2025",
+      "title": "Duda Carbone Avança às Quartas em Criciúma e Desafia Favorita",
+      "desc": "Bateu tenistas experientes para se consolidar como a atleta de 15 anos mais precoce no profissional feminino.",
+      "link": "https://tenisbrasil.uol.com.br/duda-carbone-faz-quartas-aos-15-anos-e-desafia-luiza-fullana/"
+    }
+  ],
+  "mapPins": [
+    {
+      "id": "brasil",
+      "name": "BRASIL",
+      "flag": "🇧🇷",
+      "cx": 368,
+      "cy": 310,
+      "type": "home",
+      "sublabel": "🏠 SEDE · 5 TORNEIOS"
+    },
+    {
+      "id": "colombia",
+      "name": "COLÔMBIA",
+      "flag": "🇨🇴",
+      "cx": 294,
+      "cy": 235,
+      "type": "international",
+      "sublabel": "J200 Pascuas Bowl"
+    },
+    {
+      "id": "canada",
+      "name": "CANADÁ",
+      "flag": "🇨🇦",
+      "cx": 296,
+      "cy": 122,
+      "type": "international",
+      "sublabel": "J200 Montreal"
+    },
+    {
+      "id": "franca",
+      "name": "ROLAND GARROS",
+      "flag": "🇫🇷",
+      "cx": 505,
+      "cy": 112,
+      "type": "grandslam",
+      "sublabel": "⭐ GRAND SLAM JUNIOR"
+    },
+    {
+      "id": "europa",
+      "name": "SÉRVIA / ALEMANHA",
+      "flag": "🇷🇸",
+      "cx": 557,
+      "cy": 123,
+      "type": "tour",
+      "sublabel": "Gira Europeia ITF"
+    }
+  ],
+  "sponsorContact": {
+    "email": "xrlsports@gmail.com",
+    "whatsapp": "+5548999999999",
+    "pdfLink": "/PLANO DE PATROCÍNIO DUDA.pdf"
+  }
+}
