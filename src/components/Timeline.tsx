@@ -54,7 +54,7 @@ export default function Timeline() {
           </div>
           <h2 className="font-space font-black text-3xl md:text-5xl tracking-tighter text-[#111] uppercase mb-4 leading-none">
             A Escalada para<br />
-            <span className="text-[#c8384e]">a Glória</span>
+            <span className="text-[#8ad300]">a Glória</span>
           </h2>
           <p className="text-sm md:text-base text-black/45 max-w-lg">
             A jornada de dedicação da Duda, desde as primeiras rebatidas em Florianópolis até as vitórias nas principais quadras internacionais.
@@ -65,7 +65,7 @@ export default function Timeline() {
         <div className="relative pl-8 md:pl-0 md:flex md:flex-col md:items-center">
 
           {/* Vertical line */}
-          <div className="absolute left-[13px] md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-[#c8384e]/30 via-black/10 to-transparent md:-translate-x-1/2" />
+          <div className="absolute left-[13px] md:left-1/2 top-0 bottom-0 w-[1px] bg-gradient-to-b from-[#8ad300]/30 via-black/10 to-transparent md:-translate-x-1/2" />
 
           {steps.map((step, idx) => {
             const isEven = idx % 2 === 0;
@@ -77,12 +77,12 @@ export default function Timeline() {
                 {/* Timeline dot */}
                 <div className={`absolute left-[-26px] md:left-1/2 top-3 w-[14px] h-[14px] rounded-full border-2 md:-translate-x-1/2 z-10 transition-all duration-300 group-hover:scale-125 ${
                   step.highlight
-                    ? "bg-[#c8384e] border-[#c8384e]"
-                    : "bg-white border-black/20 group-hover:border-[#c8384e]"
+                    ? "bg-[#8ad300] border-[#8ad300]"
+                    : "bg-white border-black/20 group-hover:border-[#8ad300]"
                 }`} />
 
                 {/* Year label */}
-                <div className={`hidden md:flex w-[45%] font-space text-base font-black tracking-tight text-black/30 group-hover:text-[#c8384e] transition-colors duration-300 pt-2 ${
+                <div className={`hidden md:flex w-[45%] font-space text-base font-black tracking-tight text-black/30 group-hover:text-[#8ad300] transition-colors duration-300 pt-2 ${
                   isEven ? "justify-end pr-8" : "order-last justify-start pl-8"
                 }`}>
                   {step.year}
@@ -96,17 +96,17 @@ export default function Timeline() {
                   transition={{ duration: 0.5, delay: 0.05 }}
                   className={`w-full md:w-[45%] p-5 rounded-2xl border text-left relative overflow-hidden transition-all duration-300 ${
                     step.highlight
-                      ? "bg-rose-50 border-rose-200"
+                      ? "bg-[#f3fae5] border-[#c0e770]"
                       : "bg-[#f7f6f4] border-black/7 hover:border-black/14"
                   }`}
                 >
                   {step.highlight && (
-                    <span className="absolute top-0 right-0 bg-[#c8384e] text-white text-[8px] font-bold tracking-widest uppercase px-3 py-1 rounded-bl-xl">
+                    <span className="absolute top-0 right-0 bg-[#8ad300] text-[#0c1530] text-[8px] font-bold tracking-widest uppercase px-3 py-1 rounded-bl-xl">
                       Destaque
                     </span>
                   )}
 
-                  <span className="block md:hidden font-space text-xs font-black tracking-widest text-[#c8384e] mb-1">
+                  <span className="block md:hidden font-space text-xs font-black tracking-widest text-[#8ad300] mb-1">
                     {step.year}
                   </span>
 

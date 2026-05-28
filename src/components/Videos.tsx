@@ -16,12 +16,12 @@ export default function Videos() {
         {/* ── VÍDEOS ── */}
         <div id="videos" className="mb-24">
           <div className="flex flex-col items-center text-center mb-12">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-[#c8384e] text-[10px] font-bold uppercase tracking-wider mb-5">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#f3fae5] border border-[#c0e770] text-[#5a8700] text-[10px] font-bold uppercase tracking-wider mb-5">
               Registros em Vídeo
             </div>
             <h2 className="font-space font-black text-3xl md:text-5xl tracking-tighter text-[#111] uppercase mb-4 leading-none">
               Momentos<br />
-              <span className="text-[#c8384e]">Icônicos</span>
+              <span className="text-[#8ad300]">Icônicos</span>
             </h2>
             <p className="text-sm md:text-base text-black/45 max-w-xl">
               Matérias de transmissões esportivas e bastidores da carreira internacional.
@@ -53,7 +53,7 @@ export default function Videos() {
                   />
                   <div className="absolute inset-0 bg-black/15 flex items-center justify-center group-hover:bg-black/25 transition-colors">
                     <div className="h-12 w-12 bg-white rounded-full flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-transform duration-300">
-                      <Play size={18} className="fill-[#c8384e] text-[#c8384e] ml-0.5" />
+                      <Play size={18} className="fill-[#8ad300] text-[#8ad300] ml-0.5" />
                     </div>
                   </div>
                   <span className="absolute bottom-3 left-3 text-[8px] font-bold tracking-wider text-white bg-black/60 px-2.5 py-1 rounded-md">
@@ -63,7 +63,7 @@ export default function Videos() {
 
                 <div className="p-5 flex flex-col justify-between flex-1">
                   <div>
-                    <span className="text-[9px] font-bold tracking-widest text-[#c8384e]/80 uppercase">
+                    <span className="text-[9px] font-bold tracking-widest text-[#8ad300]/80 uppercase">
                       {vid.portal}
                     </span>
                     <h3 className="font-space text-sm font-black tracking-wide text-[#111] uppercase mt-1 mb-2 leading-snug">
@@ -75,7 +75,7 @@ export default function Videos() {
                     href={vid.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[10px] font-bold tracking-wider text-black/35 hover:text-[#c8384e] uppercase transition-colors self-start"
+                    className="inline-flex items-center gap-1 text-[10px] font-bold tracking-wider text-black/35 hover:text-[#8ad300] uppercase transition-colors self-start"
                   >
                     Assistir Matéria <ExternalLink size={11} />
                   </a>
@@ -93,7 +93,7 @@ export default function Videos() {
             </div>
             <h2 className="font-space font-black text-3xl md:text-5xl tracking-tighter text-[#111] uppercase mb-4 leading-none">
               O Brasil falando sobre<br />
-              <span className="text-[#c8384e]">Duda Carbone</span>
+              <span className="text-[#8ad300]">Duda Carbone</span>
             </h2>
             <p className="text-sm md:text-base text-black/45 max-w-xl">
               Reportagens e editoriais comprovando a ascensão da atleta.
@@ -138,7 +138,7 @@ export default function Videos() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-[10px] font-bold tracking-wider text-black/35 hover:text-[#c8384e] uppercase transition-colors"
+                    className="inline-flex items-center gap-1 text-[10px] font-bold tracking-wider text-black/35 hover:text-[#8ad300] uppercase transition-colors"
                   >
                     Ler Reportagem <ExternalLink size={11} />
                   </a>

@@ -123,7 +123,7 @@ export default function Footer() {
       {/* Back to top */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-6 w-10 h-10 bg-[#c8384e] text-white rounded-full flex items-center justify-center shadow-[0_4px_16px_rgba(200,56,78,0.4)] hover:bg-[#b02f43] transition-all z-50 ${
+        className={`fixed bottom-8 right-6 w-10 h-10 bg-[#8ad300] text-[#0c1530] rounded-full flex items-center justify-center shadow-[0_4px_16px_rgba(138,211,0,0.4)] hover:bg-[#79b800] transition-all z-50 ${
           isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
         }`}
         aria-label="Voltar ao topo"

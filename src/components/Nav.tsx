@@ -50,13 +50,13 @@ export default function Nav() {
           onClick={(e) => handleLinkClick(e, "home")}
           className="flex items-center gap-2 group"
         >
-          <div className="relative h-9 w-28 bg-[#111111] rounded-lg overflow-hidden flex items-center justify-center p-1.5">
+          <div className="relative h-8 w-36">
             <Image
               src="/logo_xrl_letras.png"
               alt="XRL Sports"
               fill
-              className="object-contain p-1"
-              sizes="112px"
+              className="object-contain object-left"
+              sizes="144px"
             />
           </div>
         </a>
@@ -84,7 +84,7 @@ export default function Nav() {
           <a
             href="#patrocinio"
             onClick={(e) => handleLinkClick(e, "patrocinio")}
-            className="hidden md:inline-flex items-center font-space text-[11px] font-bold uppercase tracking-wider text-white bg-[#c8384e] hover:bg-[#b02f43] px-5 py-2.5 rounded-full transition-colors shadow-[0_4px_14px_rgba(200,56,78,0.25)] hover:shadow-[0_6px_20px_rgba(200,56,78,0.35)]"
+            className="hidden md:inline-flex items-center font-space text-[11px] font-bold uppercase tracking-wider text-[#0c1530] bg-[#8ad300] hover:bg-[#79b800] px-5 py-2.5 rounded-full transition-colors shadow-[0_4px_14px_rgba(138,211,0,0.3)] hover:shadow-[0_6px_20px_rgba(138,211,0,0.4)]"
           >
             Patrocínio
           </a>
@@ -122,7 +122,7 @@ export default function Nav() {
         <a
           href="#patrocinio"
           onClick={(e) => handleLinkClick(e, "patrocinio")}
-          className="font-space text-center font-bold uppercase tracking-wider text-white bg-[#c8384e] py-3.5 rounded-full mt-2 active:scale-95 transition-all"
+          className="font-space text-center font-bold uppercase tracking-wider text-[#0c1530] bg-[#8ad300] hover:bg-[#79b800] py-3.5 rounded-full mt-2 active:scale-95 transition-all"
         >
           Patrocínio
         </a>

@@ -6,9 +6,9 @@ import { motion } from "framer-motion";
 
 export default function SponsorCta() {
   return (
-    <section id="patrocinio" className="relative py-24 bg-[#111111] overflow-hidden z-20">
-      {/* Subtle red orb */}
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#c8384e]/10 blur-[120px] pointer-events-none" />
+    <section id="patrocinio" className="relative py-24 bg-[#0c1530] overflow-hidden z-20">
+      {/* XRL lime orb */}
+      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#8ad300]/8 blur-[120px] pointer-events-none" />
 
       <div className="max-w-5xl mx-auto px-6 relative z-10">
         <motion.div
@@ -24,7 +24,7 @@ export default function SponsorCta() {
 
           <h2 className="font-space font-black text-4xl md:text-6xl tracking-tighter text-white uppercase leading-none mb-6">
             Pronto para<br />
-            <span className="text-[#c8384e]">entrar em quadra</span><br />
+            <span className="text-[#8ad300]">entrar em quadra</span><br />
             com a Duda?
           </h2>
 
@@ -37,7 +37,7 @@ export default function SponsorCta() {
               href="https://wa.me/5548996671987?text=Olá Roger, tenho interesse em patrocinar a Duda Carbone. Vi o site e gostaria de conversar sobre as cotas."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 font-space text-sm font-bold uppercase tracking-wider text-white bg-[#c8384e] hover:bg-[#b02f43] px-8 py-4 rounded-full transition-all shadow-[0_4px_20px_rgba(200,56,78,0.35)] hover:shadow-[0_6px_28px_rgba(200,56,78,0.5)] hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2.5 font-space text-sm font-bold uppercase tracking-wider text-[#0c1530] bg-[#8ad300] hover:bg-[#79b800] px-8 py-4 rounded-full transition-all shadow-[0_4px_20px_rgba(138,211,0,0.35)] hover:shadow-[0_6px_28px_rgba(138,211,0,0.5)] hover:-translate-y-0.5"
             >
               <MessageSquare size={16} />
               WhatsApp: (48) 99667-1987

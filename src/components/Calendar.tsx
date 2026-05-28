@@ -141,7 +141,7 @@ export default function Calendar() {
     pro:      "bg-emerald-50 text-emerald-700 border-emerald-200",
     europe:   "bg-purple-50 text-purple-700 border-purple-200",
     itf:      "bg-blue-50 text-blue-700 border-blue-200",
-    featured: "bg-rose-50 text-rose-700 border-rose-200",
+    featured: "bg-[#f3fae5] text-[#4a7200] border-[#c0e770]",
     tbd:      "bg-gray-50 text-gray-500 border-gray-200",
   };
 
@@ -149,7 +149,7 @@ export default function Calendar() {
     pro:      "bg-emerald-400",
     europe:   "bg-purple-400",
     itf:      "bg-blue-400",
-    featured: "bg-[#c8384e]",
+    featured: "bg-[#8ad300]",
     tbd:      "bg-gray-300",
   };
 
@@ -163,13 +163,13 @@ export default function Calendar() {
 
         {/* Header */}
         <div className="flex flex-col items-center text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-rose-50 border border-rose-200 text-[#c8384e] text-[10px] font-bold uppercase tracking-wider mb-5">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#f3fae5] border border-[#c0e770] text-[#5a8700] text-[10px] font-bold uppercase tracking-wider mb-5">
             <Plane size={12} />
             Calendário 2026
           </div>
           <h2 className="font-space font-black text-3xl md:text-5xl tracking-tighter text-[#111] uppercase mb-4 leading-none">
             Próximas<br />
-            <span className="text-[#c8384e]">Batalhas</span>
+            <span className="text-[#8ad300]">Batalhas</span>
           </h2>
           <p className="text-sm md:text-base text-black/45 max-w-xl">
             Rota internacional da Duda rumo aos principais torneios do mundo.{" "}
@@ -217,7 +217,7 @@ export default function Calendar() {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.3 }}
                 className={`relative bg-white border rounded-2xl overflow-hidden flex flex-col group transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_12px_32px_rgba(0,0,0,0.09)] ${
-                  t.featured ? "border-[#c8384e]/30 shadow-[0_4px_20px_rgba(200,56,78,0.08)]" : "border-black/7"
+                  t.featured ? "border-[#8ad300]/30 shadow-[0_4px_20px_rgba(138,211,0,0.1)]" : "border-black/7"
                 }`}
               >
                 {/* Top color stripe */}
@@ -250,7 +250,7 @@ export default function Calendar() {
                         {t.title}
                       </h4>
                       <p className="text-xs text-black/45 leading-relaxed mb-2">{t.desc}</p>
-                      <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#c8384e]">
+                      <span className="inline-flex items-center gap-1 text-[10px] font-semibold text-[#8ad300]">
                         <MapPin size={10} />
                         {t.loc}
                       </span>
@@ -264,7 +264,7 @@ export default function Calendar() {
 
         {/* Footer note */}
         <div className="bg-white border border-black/7 rounded-xl p-5 flex gap-4 items-start">
-          <Trophy size={18} className="text-[#c8384e] flex-shrink-0 mt-0.5" />
+          <Trophy size={18} className="text-[#8ad300] flex-shrink-0 mt-0.5" />
           <p className="text-xs text-black/45 leading-relaxed">
             <strong className="text-[#111] font-semibold">Atenção Investidores:</strong>{" "}
             O calendário internacional (América do Sul, Europa e América do Norte) exige estrutura sólida de viagens, hospedagem e equipe técnica. Esta rota é a vitrine perfeita para marcas que buscam exposição global qualificada.

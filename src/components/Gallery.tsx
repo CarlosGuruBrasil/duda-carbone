@@ -49,7 +49,7 @@ export default function Gallery() {
           </div>
           <h2 className="font-space font-black text-3xl md:text-5xl tracking-tighter text-[#111] uppercase mb-4 leading-none">
             Momentos que definem<br />
-            <span className="text-[#c8384e]">uma Campeã</span>
+            <span className="text-[#8ad300]">uma Campeã</span>
           </h2>
           <p className="text-sm md:text-base text-black/45 max-w-xl">
             Registros fotográficos da rotina de treinos, competições internacionais e as principais vitórias da Duda.
@@ -84,7 +84,7 @@ export default function Gallery() {
               </div>
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 <div className="h-10 w-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-                  <Maximize2 size={16} className="text-[#c8384e]" />
+                  <Maximize2 size={16} className="text-[#8ad300]" />
                 </div>
               </div>
             </motion.div>
@@ -144,8 +144,8 @@ export default function Gallery() {
                 <p className="text-xs md:text-sm text-white/60 text-center max-w-2xl leading-relaxed">
                   {images[selectedIdx].caption}
                 </p>
-                <span className="flex items-center gap-1 text-xs font-bold text-[#c8384e] shrink-0">
-                  <Heart size={13} className="fill-[#c8384e]" /> {images[selectedIdx].likes}
+                <span className="flex items-center gap-1 text-xs font-bold text-[#8ad300] shrink-0">
+                  <Heart size={13} className="fill-[#8ad300]" /> {images[selectedIdx].likes}
                 </span>
               </div>
             </motion.div>

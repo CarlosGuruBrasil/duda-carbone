@@ -105,7 +105,7 @@ export default function JerseySimulator() {
           </div>
           <h2 className="font-space font-black text-3xl md:text-5xl tracking-tighter text-[#111] uppercase mb-4 leading-none">
             Veja sua marca no<br />
-            <span className="text-[#c8384e]">Uniforme da Duda</span>
+            <span className="text-[#8ad300]">Uniforme da Duda</span>
           </h2>
           <p className="text-sm md:text-base text-black/45 max-w-xl">
             Faça o upload do logotipo da sua empresa e simule instantaneamente a presença da sua marca no uniforme oficial de jogo.
@@ -138,7 +138,7 @@ export default function JerseySimulator() {
               <div className="absolute top-4 left-4 right-4 flex justify-between items-center">
                 <span className={`text-[9px] font-bold tracking-widest uppercase px-2.5 py-1 rounded-full transition-all duration-300 ${
                   currentTier === "master"
-                    ? "bg-[#c8384e] text-white"
+                    ? "bg-[#8ad300] text-[#0c1530]"
                     : currentTier === "oficial"
                     ? "bg-purple-500 text-white"
                     : "bg-emerald-500 text-white"
@@ -238,7 +238,7 @@ export default function JerseySimulator() {
               onClick={() => fileInputRef.current?.click()}
               className={`border-2 border-dashed rounded-2xl p-6 text-center transition-all duration-300 cursor-pointer ${
                 isDragOver
-                  ? "border-[#c8384e] bg-rose-50"
+                  ? "border-[#8ad300] bg-[#f3fae5]"
                   : "border-black/15 bg-white hover:border-black/25 hover:bg-[#f7f6f4]"
               }`}
             >
@@ -290,7 +290,7 @@ export default function JerseySimulator() {
                 Selecione uma cota para simular
               </h4>
               {[
-                { type: "master", label: "Cota Master · Peito", color: "bg-[#c8384e]" },
+                { type: "master", label: "Cota Master · Peito", color: "bg-[#8ad300]" },
                 { type: "oficial", label: "Cota Oficial · Mangas", color: "bg-purple-500" },
                 { type: "apoio", label: "Cota Apoio · Digital", color: "bg-emerald-500" },
               ].map((tier) => (
@@ -325,7 +325,7 @@ export default function JerseySimulator() {
                       <h4 className="font-space text-lg font-black tracking-wide text-[#111] leading-none">
                         {tierData[currentTier].name}
                       </h4>
-                      <span className="block font-space text-[9px] font-bold tracking-wider text-[#c8384e] uppercase mt-1">
+                      <span className="block font-space text-[9px] font-bold tracking-wider text-[#8ad300] uppercase mt-1">
                         {tierData[currentTier].label}
                       </span>
                     </div>
@@ -353,7 +353,7 @@ export default function JerseySimulator() {
                   href={tierData[currentTier].cta}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block text-center font-space text-xs font-bold uppercase tracking-wider text-white bg-[#c8384e] hover:bg-[#b02f43] py-3.5 rounded-full shadow-[0_4px_14px_rgba(200,56,78,0.3)] active:scale-95 transition-all mt-2"
+                  className="block text-center font-space text-xs font-bold uppercase tracking-wider text-white bg-[#8ad300] hover:bg-[#79b800] py-3.5 rounded-full shadow-[0_4px_14px_rgba(138,211,0,0.3)] active:scale-95 transition-all mt-2"
                 >
                   Garantir Esta Cota
                 </a>
@@ -367,7 +367,7 @@ export default function JerseySimulator() {
         {/* Seção de Diretrizes CBT (Regras do Uniforme) */}
         <div className="border-t border-black/7 pt-14 mt-14 text-left">
           <div className="flex gap-2 items-center mb-4">
-            <HelpCircle size={18} className="text-[#c8384e]" />
+            <HelpCircle size={18} className="text-[#8ad300]" />
             <h3 className="font-space text-lg font-black tracking-wide text-[#111] uppercase">
               Diretrizes CBT de Patrocínio nos Uniformes
             </h3>
@@ -467,7 +467,7 @@ export default function JerseySimulator() {
                   <p className="text-black/45 leading-relaxed">
                     Cada manga do uniforme de jogo possui no máximo 2 posições autorizadas para inserção de logomarcas.
                   </p>
-                  <div className="font-space text-lg font-black text-[#c8384e] mt-2">
+                  <div className="font-space text-lg font-black text-[#8ad300] mt-2">
                     39 cm²
                   </div>
                 </div>
@@ -478,7 +478,7 @@ export default function JerseySimulator() {
                   <p className="text-black/45 leading-relaxed">
                     Em cada área de 39 cm², é permitida a fixação de no máximo 2 marcas corporativas diferentes.
                   </p>
-                  <div className="font-space text-lg font-black text-[#c8384e] mt-2">
+                  <div className="font-space text-lg font-black text-[#8ad300] mt-2">
                     Máx. 2
                   </div>
                 </div>
@@ -494,7 +494,7 @@ export default function JerseySimulator() {
                   <p className="text-black/45 leading-relaxed">
                     Mangas internas de compressão podem comportar até 2 logomarcas menores lado a lado.
                   </p>
-                  <div className="font-space text-lg font-black text-[#c8384e] mt-2">
+                  <div className="font-space text-lg font-black text-[#8ad300] mt-2">
                     2 × 13 cm²
                   </div>
                 </div>
@@ -505,7 +505,7 @@ export default function JerseySimulator() {
                   <p className="text-black/45 leading-relaxed">
                     Permite a inserção de uma única logomarca de compressão expandida, com maior destaque visual.
                   </p>
-                  <div className="font-space text-lg font-black text-[#c8384e] mt-2">
+                  <div className="font-space text-lg font-black text-[#8ad300] mt-2">
                     1 × 26 cm²
                   </div>
                 </div>

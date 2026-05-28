@@ -43,7 +43,7 @@ export default function Hero() {
             Brasil · Tênis Profissional
           </span>
           <div className="ml-5 flex items-center gap-2 hidden sm:flex">
-            <span className="block w-1.5 h-1.5 rounded-full bg-[#c8384e] animate-pulse" />
+            <span className="block w-1.5 h-1.5 rounded-full bg-[#8ad300] animate-pulse" />
             <span className="text-[10px] text-black/25 tracking-[0.2em] uppercase">Temporada 2026</span>
           </div>
         </motion.div>
@@ -120,7 +120,7 @@ export default function Hero() {
           >
             <a
               href="#patrocinio"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#c8384e] text-white text-sm font-bold tracking-wide hover:bg-[#b02f43] transition-colors shadow-[0_4px_24px_rgba(200,56,78,0.3)]"
+              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-[#8ad300] text-[#0c1530] text-sm font-bold tracking-wide hover:bg-[#79b800] transition-colors shadow-[0_4px_24px_rgba(138,211,0,0.3)]"
             >
               Seja Patrocinador
             </a>

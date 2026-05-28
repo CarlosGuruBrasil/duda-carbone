@@ -32,7 +32,7 @@ export default function Achievements() {
       where: "Paris, França · Abril 2026",
       desc: "Vitória na estreia nas sagradas quadras de saibro de Roland Garros. Atuação marcante no templo do saibro mundial.",
       link: null,
-      accent: "#c8384e",
+      accent: "#8ad300",
       bg: "#fdf3f5",
       border: "#fecdd3",
     },
@@ -78,7 +78,7 @@ export default function Achievements() {
           </div>
           <h2 className="font-space font-black text-3xl md:text-5xl tracking-tighter text-[#111] uppercase mb-4 leading-none">
             A Ascensão de uma<br />
-            <span className="text-[#c8384e]">Futura Campeã</span>
+            <span className="text-[#8ad300]">Futura Campeã</span>
           </h2>
           <p className="text-sm md:text-base text-black/45 max-w-xl">
             Medalhas e vitórias expressivas no circuito juvenil mundial e estreia precoce no profissional da WTA.
