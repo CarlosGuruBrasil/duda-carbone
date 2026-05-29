@@ -56,7 +56,7 @@ export default function About() {
         <div className="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-12 lg:gap-20 items-start">
 
           {/* Left — photo + ficha */}
-          <div className="flex flex-col gap-6 lg:sticky lg:top-28">
+          <div className="flex flex-col gap-6">
             <motion.div
               initial={{ opacity: 0, transform: "scale(0.97)" }}
               whileInView={{ opacity: 1, transform: "scale(1)" }}

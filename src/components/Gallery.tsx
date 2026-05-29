@@ -6,14 +6,14 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 
 const photos = [
-  { src: "/foto_duda_vencedora.jpeg",  alt: "Duda Carbone vibrando na vitória", span: "col-span-2 row-span-2" },
+  { src: "/foto_duda_vencedora.jpeg",  alt: "Duda Carbone vibrando na vitória", span: "col-span-2 row-span-1 md:row-span-2" },
   { src: "/foto_real_duda_ouro.jpg",   alt: "Duda Carbone com a medalha de ouro", span: "col-span-1 row-span-1" },
   { src: "/foto_duda_principal.jpeg",  alt: "Duda Carbone com Guga Kuerten no LIC", span: "col-span-1 row-span-1" },
   { src: "/foto_duda_patrocinio.jpeg", alt: "Duda Carbone em ação", span: "col-span-1 row-span-1" },
   { src: "/img_training.png",          alt: "Duda Carbone em treino", span: "col-span-1 row-span-1" },
   { src: "/img_roland.png",            alt: "Duda Carbone em Roland Garros", span: "col-span-1 row-span-1" },
   { src: "/foto_duda_floripa.jpeg",    alt: "Duda posando em Florianópolis", span: "col-span-1 row-span-1" },
-  { src: "/foto_duda_midia1.jpeg",     alt: "Duda Carbone em jogo oficial", span: "col-span-2 row-span-2" },
+  { src: "/foto_duda_midia1.jpeg",     alt: "Duda Carbone em jogo oficial", span: "col-span-2 row-span-1 md:row-span-2" },
 ];
 
 export default function Gallery() {
