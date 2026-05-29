@@ -50,7 +50,7 @@ export default function Nav() {
         </a>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-0.5">
+        <div className="hidden lg:flex items-center gap-0.5">
           {navLinks.map((link) => (
             <a key={link.id} href={`#${link.id}`} onClick={(e) => scrollTo(e, link.id)} className="nav-link">
               {link.label}
@@ -64,18 +64,18 @@ export default function Nav() {
             href="https://wa.me/5548996671987?text=Olá Roger, tenho interesse em patrocinar a Duda Carbone."
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex btn-lime text-xs"
+            className="hidden lg:inline-flex btn-lime text-xs"
             style={{ padding: "0.5rem 1.25rem" }}
           >
             Seja Patrocinador
           </a>
           <button
             onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="md:hidden p-2 rounded-lg"
+            className="lg:hidden p-2 rounded-lg"
             style={{ color: "oklch(0.70 0.008 260)" }}
             aria-label={isMobileOpen ? "Fechar menu" : "Abrir menu"}
           >
-            {isMobileOpen ? <X size={22} /> : <Menu size={22} />}
+            {isMobileOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
       </div>
