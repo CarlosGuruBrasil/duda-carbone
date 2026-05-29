@@ -45,46 +45,46 @@ export default function Hero() {
       {/* Background base — dark navy */}
       <div className="absolute inset-0 z-0" style={{ background: "oklch(0.10 0.04 260)" }} />
 
-      {/* Duda portrait — PNG com fundo escuro, posicionada à direita */}
+      {/* Duda — foto recortada corpo inteiro, ancorada à direita */}
       <div
-        className="absolute inset-y-0 right-0 z-0"
-        style={{ width: "65%", maxWidth: "800px" }}
+        className="absolute inset-y-0 right-0 z-0 flex items-end justify-end"
+        style={{ width: "55%", maxWidth: "700px" }}
         aria-hidden
       >
-        <Image
-          src="/img_portrait.png"
-          alt=""
-          fill
-          priority
-          className="object-contain object-right-bottom"
-          style={{ filter: "saturate(1.2) contrast(1.05)" }}
-          sizes="800px"
-        />
-        {/* Fade esquerda para fundir com o fundo */}
+        <div className="relative w-full h-full">
+          <Image
+            src="/duda_hero.png"
+            alt=""
+            fill
+            priority
+            className="object-contain object-bottom object-right"
+            style={{ filter: "saturate(1.15) contrast(1.05) brightness(1.05)" }}
+            sizes="700px"
+          />
+        </div>
+        {/* Fade esquerda — funde com o conteúdo */}
         <div
-          className="absolute inset-0"
+          className="absolute inset-0 pointer-events-none"
           style={{
             background: `linear-gradient(to right,
               oklch(0.10 0.04 260) 0%,
-              oklch(0.10 0.04 260 / 0.7) 15%,
-              oklch(0.10 0.04 260 / 0.15) 40%,
+              oklch(0.10 0.04 260 / 0.75) 18%,
+              oklch(0.10 0.04 260 / 0.2) 40%,
               oklch(0.10 0.04 260 / 0) 65%
             )`,
           }}
         />
-        {/* Fade inferior sutil */}
+        {/* Fade superior */}
         <div
-          className="absolute bottom-0 left-0 right-0 h-32"
-          style={{
-            background: `linear-gradient(to top, oklch(0.10 0.04 260 / 0.6), oklch(0.10 0.04 260 / 0))`,
-          }}
+          className="absolute inset-x-0 top-0 h-40 pointer-events-none"
+          style={{ background: "linear-gradient(to bottom, oklch(0.10 0.04 260 / 0.8), oklch(0.10 0.04 260 / 0))" }}
         />
       </div>
 
       {/* Lime glow atrás da atleta */}
       <div
-        className="absolute bottom-0 right-[10%] w-[500px] h-[500px] pointer-events-none z-0"
-        style={{ background: "radial-gradient(ellipse, oklch(0.84 0.22 130 / 0.06) 0%, transparent 65%)" }}
+        className="absolute bottom-0 right-[5%] w-[500px] h-[500px] pointer-events-none z-0"
+        style={{ background: "radial-gradient(ellipse, oklch(0.84 0.22 130 / 0.07) 0%, transparent 65%)" }}
         aria-hidden
       />
 
