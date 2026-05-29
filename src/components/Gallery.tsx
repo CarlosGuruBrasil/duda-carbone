@@ -1,153 +1,135 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, ChevronLeft, ChevronRight, Maximize2, Heart } from "lucide-react";
+import { X, ChevronLeft, ChevronRight } from "lucide-react";
+
+const photos = [
+  { src: "/foto_duda_vencedora.jpeg",  alt: "Duda Carbone vibrando na vitória", span: "col-span-2 row-span-2" },
+  { src: "/foto_real_duda_ouro.jpg",   alt: "Duda Carbone com a medalha de ouro", span: "col-span-1 row-span-1" },
+  { src: "/foto_duda_principal.jpeg",  alt: "Duda Carbone com Guga Kuerten no LIC", span: "col-span-1 row-span-1" },
+  { src: "/foto_duda_patrocinio.jpeg", alt: "Duda Carbone em ação", span: "col-span-1 row-span-1" },
+  { src: "/img_training.png",          alt: "Duda Carbone em treino", span: "col-span-1 row-span-1" },
+  { src: "/img_roland.png",            alt: "Duda Carbone em Roland Garros", span: "col-span-1 row-span-1" },
+  { src: "/foto_duda_floripa.jpeg",    alt: "Duda posando em Florianópolis", span: "col-span-1 row-span-1" },
+  { src: "/foto_duda_midia1.jpeg",     alt: "Duda Carbone em jogo oficial", span: "col-span-2 row-span-2" },
+];
 
 export default function Gallery() {
-  const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
+  const [selected, setSelected] = useState<number | null>(null);
 
-  const images = [
-    { src: "/foto_duda_vencedora.jpeg",  alt: "Duda Carbone vibrando na vitória", caption: "Duda Carbone — A força de uma vencedora nata nas quadras.", large: true,  likes: "2.4K" },
-    { src: "/foto_real_duda_ouro.jpg",   alt: "Duda Carbone com a medalha de ouro", caption: "Medalha de Ouro — Jogos Sul-Americanos da Juventude, Panamá 2026.", large: false, likes: "3.1K" },
-    { src: "/foto_duda_principal.jpeg",  alt: "Duda Carbone ao lado de Guga Kuerten", caption: "Com o ídolo Guga Kuerten e seu pai/treinador Ednaldo Leonel no LIC.", large: false, likes: "5.7K" },
-    { src: "/foto_duda_patrocinio.jpeg", alt: "Duda comemorando ponto", caption: "Duda Carbone — Foco, técnica e vibração na quadra de saibro.", large: false, likes: "1.8K" },
-    { src: "/img_training.png",          alt: "Duda Carbone em treino", caption: "Rotina de treinos no LIC — A disciplina diária que forja uma futura campeã.", large: false, likes: "4.2K" },
-    { src: "/img_roland.png",            alt: "Duda Carbone em Roland Garros", caption: "Duda Carbone nas sagradas quadras de Roland Garros Junior Series 2026.", large: false, likes: "6.8K" },
-    { src: "/foto_duda_floripa.jpeg",    alt: "Duda posando em Florianópolis", caption: "Florianópolis, SC — Onde tudo começou e onde treina diariamente.", large: false, likes: "3.3K" },
-    { src: "/foto_duda_midia1.jpeg",     alt: "Duda Carbone em jogo oficial", caption: "A garra e determinação que chamam a atenção do circuito nacional.", large: true,  likes: "4.9K" },
-  ];
-
-  const handlePrev = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (selectedIdx !== null) setSelectedIdx((selectedIdx - 1 + images.length) % images.length);
-  };
-  const handleNext = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    if (selectedIdx !== null) setSelectedIdx((selectedIdx + 1) % images.length);
-  };
-
-  useEffect(() => {
-    const fn = (e: KeyboardEvent) => {
-      if (selectedIdx === null) return;
-      if (e.key === "Escape") setSelectedIdx(null);
-      if (e.key === "ArrowLeft") setSelectedIdx((selectedIdx - 1 + images.length) % images.length);
-      if (e.key === "ArrowRight") setSelectedIdx((selectedIdx + 1) % images.length);
-    };
-    window.addEventListener("keydown", fn);
-    return () => window.removeEventListener("keydown", fn);
-  }, [selectedIdx, images.length]);
+  const prev = () => setSelected((s) => (s !== null ? (s - 1 + photos.length) % photos.length : null));
+  const next = () => setSelected((s) => (s !== null ? (s + 1) % photos.length : null));
 
   return (
-    <section id="galeria" className="relative py-24 bg-white border-y border-black/7 overflow-hidden z-20">
-      <div className="max-w-7xl mx-auto px-6 relative z-10">
-
-        <div className="flex flex-col items-center text-center mb-12">
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#f7f6f4] border border-black/8 text-black/45 text-[10px] font-bold uppercase tracking-wider mb-5">
-            📸 Galeria
+    <section
+      id="galeria"
+      className="relative py-28 section-divider"
+      style={{ background: "oklch(0.12 0.04 260)", borderBottom: "1px solid oklch(1 0 0 / 0.07)" }}
+    >
+      <div className="max-w-7xl mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, transform: "translateY(24px)" }}
+          whileInView={{ opacity: 1, transform: "translateY(0px)" }}
+          viewport={{ once: true, margin: "-80px" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
+          className="flex flex-col items-center text-center mb-12"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <div className="lime-dot" />
+            <span className="font-display text-[11px] font-bold tracking-[0.25em] uppercase" style={{ color: "oklch(0.84 0.22 130)" }}>Galeria</span>
           </div>
-          <h2 className="font-space font-black text-3xl md:text-5xl tracking-tighter text-[#111] uppercase mb-4 leading-none">
+          <h2
+            className="font-display font-black uppercase leading-none mb-4"
+            style={{ fontSize: "clamp(2.5rem, 5vw, 4.5rem)", color: "oklch(0.97 0.005 85)", letterSpacing: "-0.02em", textWrap: "balance" }}
+          >
             Momentos que definem<br />
-            <span className="text-[#8ad300]">uma Campeã</span>
+            <span style={{ color: "oklch(0.84 0.22 130)" }}>uma Campeã</span>
           </h2>
-          <p className="text-sm md:text-base text-black/45 max-w-xl">
-            Registros fotográficos da rotina de treinos, competições internacionais e as principais vitórias da Duda.
-          </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 auto-rows-[160px] md:auto-rows-[200px]">
-          {images.map((img, idx) => (
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 auto-rows-[160px] md:auto-rows-[200px]">
+          {photos.map((photo, idx) => (
             <motion.div
               key={idx}
-              initial={{ opacity: 0, scale: 0.97 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, transform: "scale(0.97)" }}
+              whileInView={{ opacity: 1, transform: "scale(1)" }}
               viewport={{ once: true, margin: "-60px" }}
-              transition={{ duration: 0.5, delay: idx * 0.04 }}
-              onClick={() => setSelectedIdx(idx)}
-              className={`relative rounded-xl overflow-hidden border border-black/7 bg-gray-100 cursor-pointer group ${
-                img.large ? "col-span-2 row-span-2" : "col-span-1 row-span-1"
-              }`}
+              transition={{ duration: 0.5, delay: 0.04 * idx, ease: "easeOut" }}
+              className={`relative ${photo.span} rounded-xl overflow-hidden cursor-pointer group`}
+              style={{ border: "1px solid oklch(1 0 0 / 0.08)" }}
+              onClick={() => setSelected(idx)}
             >
               <Image
-                src={img.src}
-                alt={img.alt}
+                src={photo.src}
+                alt={photo.alt}
                 fill
-                className="object-cover object-top transition-all duration-500 ease-out group-hover:scale-105"
-                sizes={img.large ? "(max-width: 768px) 100vw, 580px" : "(max-width: 768px) 50vw, 290px"}
+                className="object-cover object-top transition-transform duration-500 ease-out group-hover:scale-105"
+                sizes="(max-width: 768px) 50vw, 25vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
-                <span className="flex items-center gap-1 text-[10px] font-bold text-white drop-shadow">
-                  <Heart size={11} className="fill-white" /> {img.likes}
-                </span>
-              </div>
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                style={{ background: "oklch(0.10 0.04 260 / 0.5)" }}
+              />
               <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <div className="h-10 w-10 bg-white/90 rounded-full flex items-center justify-center shadow-lg">
-                  <Maximize2 size={16} className="text-[#8ad300]" />
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center"
+                  style={{ background: "oklch(0.84 0.22 130 / 0.9)" }}
+                >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="oklch(0.10 0.04 260)" strokeWidth="2.5"><path d="M15 3h6v6M10 14 21 3M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
-
       </div>
 
       {/* Lightbox */}
       <AnimatePresence>
-        {selectedIdx !== null && (
+        {selected !== null && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={() => setSelectedIdx(null)}
-            className="fixed inset-0 z-50 bg-black/90 backdrop-blur-md flex items-center justify-center p-6"
+            className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+            style={{ background: "oklch(0.05 0.02 260 / 0.95)", backdropFilter: "blur(20px)" }}
+            onClick={() => setSelected(null)}
           >
             <button
-              onClick={() => setSelectedIdx(null)}
-              className="absolute top-6 right-6 h-11 w-11 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+              className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center"
+              style={{ background: "oklch(1 0 0 / 0.1)", color: "oklch(0.97 0.005 85)" }}
+              onClick={() => setSelected(null)}
+              aria-label="Fechar"
             >
-              <X size={18} />
+              <X size={20} />
             </button>
             <button
-              onClick={handlePrev}
-              className="absolute left-6 top-1/2 -translate-y-1/2 h-11 w-11 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+              className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center"
+              style={{ background: "oklch(1 0 0 / 0.1)", color: "oklch(0.97 0.005 85)" }}
+              onClick={(e) => { e.stopPropagation(); prev(); }}
+              aria-label="Anterior"
             >
-              <ChevronLeft size={22} />
+              <ChevronLeft size={20} />
             </button>
             <button
-              onClick={handleNext}
-              className="absolute right-6 top-1/2 -translate-y-1/2 h-11 w-11 bg-white/10 hover:bg-white/20 rounded-full flex items-center justify-center text-white transition-colors"
+              className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full flex items-center justify-center"
+              style={{ background: "oklch(1 0 0 / 0.1)", color: "oklch(0.97 0.005 85)" }}
+              onClick={(e) => { e.stopPropagation(); next(); }}
+              aria-label="Próxima"
             >
-              <ChevronRight size={22} />
+              <ChevronRight size={20} />
             </button>
-
             <motion.div
-              initial={{ scale: 0.96, y: 12 }}
-              animate={{ scale: 1, y: 0 }}
-              exit={{ scale: 0.96, y: 12 }}
-              transition={{ type: "spring", damping: 25, stiffness: 220 }}
+              key={selected}
+              initial={{ opacity: 0, transform: "scale(0.95)" }}
+              animate={{ opacity: 1, transform: "scale(1)" }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.25, ease: "easeOut" }}
+              className="relative max-h-[85vh] max-w-[90vw] aspect-[4/3] rounded-xl overflow-hidden"
               onClick={(e) => e.stopPropagation()}
-              className="flex flex-col items-center max-w-5xl w-full"
             >
-              <div className="relative w-full aspect-[4/3] md:aspect-[16/10] max-h-[75vh] rounded-2xl overflow-hidden bg-black border border-white/10">
-                <Image
-                  src={images[selectedIdx].src}
-                  alt={images[selectedIdx].alt}
-                  fill
-                  className="object-contain"
-                  sizes="100vw"
-                  preload
-                />
-              </div>
-              <div className="flex items-center gap-4 mt-4">
-                <p className="text-xs md:text-sm text-white/60 text-center max-w-2xl leading-relaxed">
-                  {images[selectedIdx].caption}
-                </p>
-                <span className="flex items-center gap-1 text-xs font-bold text-[#8ad300] shrink-0">
-                  <Heart size={13} className="fill-[#8ad300]" /> {images[selectedIdx].likes}
-                </span>
-              </div>
+              <Image src={photos[selected].src} alt={photos[selected].alt} fill className="object-contain" sizes="90vw" />
             </motion.div>
           </motion.div>
         )}
