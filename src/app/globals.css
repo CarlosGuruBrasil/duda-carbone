@@ -159,10 +159,10 @@ body::before {
 /* ── CURSOR — bola de tênis nativa ── */
 @media (hover: hover) and (pointer: fine) {
   html, body, * {
-    cursor: url('/cursor-tennis.svg') 16 16, auto !important;
+    cursor: url('/cursor-tennis.svg') 8 8, auto !important;
   }
   a, button, [role="button"], label, select, input, textarea {
-    cursor: url('/cursor-tennis-lg.svg') 20 20, pointer !important;
+    cursor: url('/cursor-tennis-lg.svg') 13 13, pointer !important;
   }
 }
 
