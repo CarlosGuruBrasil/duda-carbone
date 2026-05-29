@@ -4,6 +4,16 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { ArrowUp } from "lucide-react";
 
+const links = [
+  { label: "Atleta",     id: "sobre" },
+  { label: "Conquistas", id: "conquistas" },
+  { label: "Agenda",     id: "eventos" },
+  { label: "Mapa",       id: "worldmap" },
+  { label: "Galeria",    id: "galeria" },
+  { label: "Vídeos",     id: "videos" },
+  { label: "Mídia",      id: "midia" },
+];
+
 export default function Footer() {
   const [isVisible, setIsVisible] = useState(false);
 
@@ -24,28 +34,30 @@ export default function Footer() {
     }
   };
 
-  const links = [
-    { label: "Atleta",     id: "sobre" },
-    { label: "Conquistas", id: "conquistas" },
-    { label: "Agenda",     id: "eventos" },
-    { label: "Mapa",       id: "worldmap" },
-    { label: "Galeria",    id: "galeria" },
-    { label: "Vídeos",     id: "videos" },
-    { label: "Mídia",      id: "midia" },
-  ];
-
   return (
-    <footer className="relative bg-[#111111] border-t border-white/8 pt-14 pb-8 z-20">
+    <footer
+      className="relative pt-14 pb-8 z-20"
+      style={{
+        background: "oklch(0.12 0.008 260)",
+        borderTop: "1px solid oklch(1 0 0 / 0.08)",
+      }}
+    >
       <div className="max-w-7xl mx-auto px-6">
 
-        <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-[1.5fr_1fr_1fr] gap-10 mb-12">
 
-          {/* Brand column */}
+          {/* Brand */}
           <div>
-            <div className="relative h-9 w-28 bg-white/5 rounded-lg overflow-hidden mb-4">
+            <div
+              className="relative h-8 w-28 rounded-lg overflow-hidden mb-5"
+              style={{ background: "oklch(1 0 0 / 0.06)" }}
+            >
               <Image src="/logo_xrl_letras.png" alt="XRL Sports" fill className="object-contain p-1.5" sizes="112px" />
             </div>
-            <p className="text-sm text-white/35 leading-relaxed max-w-xs mb-5">
+            <p
+              className="text-sm leading-relaxed max-w-xs mb-6"
+              style={{ color: "oklch(0.55 0.006 260)" }}
+            >
               Gestão esportiva de alta performance. Representando Maria Eduarda Carbone nos circuitos ITF e WTA.
             </p>
             <div className="flex items-center gap-3">
@@ -59,62 +71,119 @@ export default function Footer() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  title={s.label}
-                  className="w-9 h-9 rounded-full bg-white/5 border border-white/8 flex items-center justify-center text-sm hover:bg-white/10 hover:border-white/15 transition-all"
+                  aria-label={s.label}
+                  className="w-9 h-9 rounded-full flex items-center justify-center text-sm transition-all"
+                  style={{
+                    background: "oklch(1 0 0 / 0.05)",
+                    border: "1px solid oklch(1 0 0 / 0.08)",
+                  }}
+                  onMouseEnter={(e) => {
+                    (e.currentTarget as HTMLElement).style.background = "oklch(1 0 0 / 0.1)";
+                    (e.currentTarget as HTMLElement).style.borderColor = "oklch(1 0 0 / 0.15)";
+                  }}
+                  onMouseLeave={(e) => {
+                    (e.currentTarget as HTMLElement).style.background = "oklch(1 0 0 / 0.05)";
+                    (e.currentTarget as HTMLElement).style.borderColor = "oklch(1 0 0 / 0.08)";
+                  }}
                 >
-                  {s.icon}
+                  <span aria-hidden>{s.icon}</span>
                 </a>
               ))}
             </div>
           </div>
 
           {/* Navigation */}
-          <div>
-            <h4 className="text-[10px] font-bold tracking-widest uppercase text-white/30 mb-4">Navegação</h4>
+          <nav aria-label="Rodapé">
+            <h4
+              className="text-[10px] font-bold tracking-widest uppercase mb-5"
+              style={{ color: "oklch(0.45 0.006 260)" }}
+            >
+              Navegação
+            </h4>
             <ul className="flex flex-col gap-2">
               {links.map((l) => (
                 <li key={l.id}>
                   <a
                     href={`#${l.id}`}
                     onClick={(e) => handleLinkClick(e, l.id)}
-                    className="text-sm text-white/40 hover:text-white transition-colors"
+                    className="text-sm transition-colors"
+                    style={{ color: "oklch(0.5 0.006 260)" }}
+                    onMouseEnter={(e) => {
+                      (e.currentTarget as HTMLElement).style.color = "oklch(0.9 0.004 260)";
+                    }}
+                    onMouseLeave={(e) => {
+                      (e.currentTarget as HTMLElement).style.color = "oklch(0.5 0.006 260)";
+                    }}
                   >
                     {l.label}
                   </a>
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Contact */}
           <div>
-            <h4 className="text-[10px] font-bold tracking-widest uppercase text-white/30 mb-4">Contato</h4>
-            <div className="flex flex-col gap-3 text-sm text-white/40">
+            <h4
+              className="text-[10px] font-bold tracking-widest uppercase mb-5"
+              style={{ color: "oklch(0.45 0.006 260)" }}
+            >
+              Contato
+            </h4>
+            <div className="flex flex-col gap-4 text-sm" style={{ color: "oklch(0.5 0.006 260)" }}>
               <div>
-                <div className="text-[10px] font-bold uppercase tracking-wider text-white/20 mb-1">WhatsApp</div>
-                <a href="https://wa.me/5548996671987" className="hover:text-white transition-colors">
+                <div
+                  className="text-[10px] font-bold uppercase tracking-wider mb-1"
+                  style={{ color: "oklch(0.38 0.005 260)" }}
+                >
+                  WhatsApp
+                </div>
+                <a
+                  href="https://wa.me/5548996671987"
+                  className="transition-colors"
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.9 0.004 260)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.5 0.006 260)")}
+                >
                   (48) 99667-1987
                 </a>
               </div>
               <div>
-                <div className="text-[10px] font-bold uppercase tracking-wider text-white/20 mb-1">E-mail</div>
-                <a href="mailto:contato@xrlsports.com.br" className="hover:text-white transition-colors">
+                <div
+                  className="text-[10px] font-bold uppercase tracking-wider mb-1"
+                  style={{ color: "oklch(0.38 0.005 260)" }}
+                >
+                  E-mail
+                </div>
+                <a
+                  href="mailto:contato@xrlsports.com.br"
+                  className="transition-colors"
+                  onMouseEnter={(e) => (e.currentTarget.style.color = "oklch(0.9 0.004 260)")}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = "oklch(0.5 0.006 260)")}
+                >
                   contato@xrlsports.com.br
                 </a>
               </div>
               <div>
-                <div className="text-[10px] font-bold uppercase tracking-wider text-white/20 mb-1">Sede</div>
+                <div
+                  className="text-[10px] font-bold uppercase tracking-wider mb-1"
+                  style={{ color: "oklch(0.38 0.005 260)" }}
+                >
+                  Sede
+                </div>
                 <span>Florianópolis, SC · Brasil</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="pt-6 border-t border-white/7 flex flex-col md:flex-row items-center justify-between gap-3">
-          <p className="text-[11px] text-white/25">
+        <div
+          className="pt-6 flex flex-col md:flex-row items-center justify-between gap-3"
+          style={{ borderTop: "1px solid oklch(1 0 0 / 0.07)" }}
+        >
+          <p className="text-[11px]" style={{ color: "oklch(0.38 0.005 260)" }}>
             © 2026 XRL Sports · Todos os direitos reservados
           </p>
-          <p className="text-[11px] text-white/20">
+          <p className="text-[11px]" style={{ color: "oklch(0.32 0.005 260)" }}>
             Maria Eduarda Carbone dos Santos · Atleta Profissional ITF/WTA
           </p>
         </div>
@@ -123,12 +192,26 @@ export default function Footer() {
       {/* Back to top */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-8 right-6 w-10 h-10 bg-[#8ad300] text-[#0c1530] rounded-full flex items-center justify-center shadow-[0_4px_16px_rgba(138,211,0,0.4)] hover:bg-[#79b800] transition-all z-50 ${
-          isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4 pointer-events-none"
-        }`}
+        className="fixed bottom-8 right-6 w-10 h-10 rounded-full flex items-center justify-center z-50 transition-all duration-200"
+        style={{
+          background: "oklch(0.82 0.22 130)",
+          color: "oklch(0.18 0.06 260)",
+          boxShadow: "0 4px 16px oklch(0.82 0.22 130 / 0.4)",
+          opacity: isVisible ? 1 : 0,
+          transform: isVisible ? "translateY(0)" : "translateY(8px)",
+          pointerEvents: isVisible ? "auto" : "none",
+        }}
         aria-label="Voltar ao topo"
+        onMouseEnter={(e) => {
+          (e.currentTarget as HTMLElement).style.background = "oklch(0.74 0.20 130)";
+          (e.currentTarget as HTMLElement).style.transform = "translateY(-2px)";
+        }}
+        onMouseLeave={(e) => {
+          (e.currentTarget as HTMLElement).style.background = "oklch(0.82 0.22 130)";
+          (e.currentTarget as HTMLElement).style.transform = "translateY(0)";
+        }}
       >
-        <ArrowUp size={16} />
+        <ArrowUp size={16} aria-hidden />
       </button>
     </footer>
   );

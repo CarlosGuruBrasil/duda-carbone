@@ -4,65 +4,110 @@ import React from "react";
 import { MessageSquare, Mail } from "lucide-react";
 import { motion } from "framer-motion";
 
+const trustBadges = [
+  { emoji: "🏆", text: "10+ Torneios Internacionais" },
+  { emoji: "🌎", text: "3 Continentes de Exposição" },
+  { emoji: "📺", text: "Cobertura Nacional de Mídia" },
+  { emoji: "⭐", text: "#1 Ranking COSAT" },
+];
+
 export default function SponsorCta() {
   return (
-    <section id="patrocinio" className="relative py-24 bg-[#0c1530] overflow-hidden z-20">
-      {/* XRL lime orb */}
-      <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[600px] h-[400px] bg-[#8ad300]/8 blur-[120px] pointer-events-none" />
+    <section
+      id="patrocinio"
+      className="relative py-28 overflow-hidden z-20"
+      style={{ background: "oklch(0.18 0.06 260)" }}
+    >
+      {/* Ambient glow – subtle, not decorative glassmorphism */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 40% at 50% -10%, oklch(0.82 0.22 130 / 0.08) 0%, transparent 70%)",
+        }}
+        aria-hidden
+      />
 
-      <div className="max-w-5xl mx-auto px-6 relative z-10">
+      <div className="max-w-4xl mx-auto px-6 relative z-10">
         <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, transform: "translateY(24px)" }}
+          whileInView={{ opacity: 1, transform: "translateY(0px)" }}
           viewport={{ once: true, margin: "-60px" }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           className="text-center"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 text-white/50 text-[10px] font-bold uppercase tracking-wider mb-8">
-            💎 Oportunidade de Patrocínio
-          </div>
-
-          <h2 className="font-space font-black text-4xl md:text-6xl tracking-tighter text-white uppercase leading-none mb-6">
-            Pronto para<br />
-            <span className="text-[#8ad300]">entrar em quadra</span><br />
-            com a Duda?
+          <h2
+            className="font-space font-black uppercase leading-none mb-6"
+            style={{
+              fontSize: "clamp(2.5rem, 6vw, 5rem)",
+              color: "oklch(0.97 0.004 85)",
+              letterSpacing: "-0.04em",
+              textWrap: "balance",
+            }}
+          >
+            Pronto para entrar<br />
+            em quadra com<br />
+            <span style={{ color: "oklch(0.82 0.22 130)" }}>a Duda?</span>
           </h2>
 
-          <p className="text-sm md:text-base text-white/45 max-w-xl mx-auto mb-10 leading-relaxed">
+          <p
+            className="text-base leading-relaxed max-w-lg mx-auto mb-12"
+            style={{ color: "oklch(0.65 0.006 260)" }}
+          >
             Sua marca exposta globalmente na carreira da maior promessa do tênis brasileiro. Fale diretamente com Roger Lorenzatto, CEO da XRL Sports.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
             <a
               href="https://wa.me/5548996671987?text=Olá Roger, tenho interesse em patrocinar a Duda Carbone. Vi o site e gostaria de conversar sobre as cotas."
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center gap-2.5 font-space text-sm font-bold uppercase tracking-wider text-[#0c1530] bg-[#8ad300] hover:bg-[#79b800] px-8 py-4 rounded-full transition-all shadow-[0_4px_20px_rgba(138,211,0,0.35)] hover:shadow-[0_6px_28px_rgba(138,211,0,0.5)] hover:-translate-y-0.5"
+              className="btn-primary justify-center"
             >
-              <MessageSquare size={16} />
+              <MessageSquare size={16} aria-hidden />
               WhatsApp: (48) 99667-1987
             </a>
 
             <a
               href="mailto:contato@xrlsports.com.br"
-              className="inline-flex items-center justify-center gap-2.5 font-space text-sm font-semibold uppercase tracking-wider text-white border border-white/20 hover:border-white/50 hover:bg-white/5 px-8 py-4 rounded-full transition-all hover:-translate-y-0.5"
+              className="inline-flex items-center justify-center gap-2.5 font-space text-xs font-semibold uppercase tracking-wider rounded-full"
+              style={{
+                padding: "0.875rem 2rem",
+                border: "1px solid oklch(1 0 0 / 0.2)",
+                color: "oklch(0.97 0.004 85)",
+                transition: "border-color 150ms cubic-bezier(0.16,1,0.3,1), background 150ms cubic-bezier(0.16,1,0.3,1)",
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "oklch(1 0 0 / 0.45)";
+                (e.currentTarget as HTMLElement).style.background = "oklch(1 0 0 / 0.05)";
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLElement).style.borderColor = "oklch(1 0 0 / 0.2)";
+                (e.currentTarget as HTMLElement).style.background = "transparent";
+              }}
             >
-              <Mail size={16} />
+              <Mail size={16} aria-hidden />
               contato@xrlsports.com.br
             </a>
           </div>
 
           {/* Trust badges */}
-          <div className="mt-14 flex flex-wrap items-center justify-center gap-8">
-            {[
-              { emoji: "🏆", text: "10+ Torneios Internacionais" },
-              { emoji: "🌎", text: "3 Continentes de Exposição" },
-              { emoji: "📺", text: "Cobertura Nacional de Mídia" },
-              { emoji: "⭐", text: "#1 Ranking COSAT" },
-            ].map((b) => (
+          <div
+            className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4"
+            style={{
+              paddingTop: "2.5rem",
+              borderTop: "1px solid oklch(1 0 0 / 0.08)",
+            }}
+          >
+            {trustBadges.map((b) => (
               <div key={b.text} className="flex items-center gap-2">
-                <span className="text-xl">{b.emoji}</span>
-                <span className="text-xs text-white/35 font-medium tracking-wide">{b.text}</span>
+                <span className="text-xl" aria-hidden>{b.emoji}</span>
+                <span
+                  className="text-xs font-medium tracking-wide"
+                  style={{ color: "oklch(0.55 0.006 260)" }}
+                >
+                  {b.text}
+                </span>
               </div>
             ))}
           </div>

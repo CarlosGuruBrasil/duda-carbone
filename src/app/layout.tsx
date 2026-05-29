@@ -5,27 +5,35 @@ import "./globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
+  preload: false,
 });
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
+  display: "swap",
+  preload: false,
 });
 
 const barlowCondensed = Barlow_Condensed({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800", "900"],
   variable: "--font-barlow-condensed",
+  display: "swap",
+  preload: false,
 });
 
 export const metadata: Metadata = {
   title: "Duda Carbone · Atleta Profissional · XRL Sports",
-  description: "Maria Eduarda Carbone, 15 anos. #1 COSAT. Ouro Jogos Sul-Americanos da Juventude. Roland Garros Junior Series. A maior promessa do tênis feminino brasileiro.",
+  description:
+    "Maria Eduarda Carbone, 15 anos. #1 COSAT. Ouro Jogos Sul-Americanos da Juventude. Roland Garros Junior Series. A maior promessa do tênis feminino brasileiro.",
   openGraph: {
     title: "Duda Carbone — Tenista Profissional",
-    description: "15 anos. #1 COSAT. Ouro Sul-Americano. Roland Garros Junior. A maior aposta do tênis feminino brasileiro.",
+    description:
+      "15 anos. #1 COSAT. Ouro Sul-Americano. Roland Garros Junior. A maior aposta do tênis feminino brasileiro.",
     images: ["/foto_duda_vencedora.jpeg"],
-  }
+  },
 };
 
 export default function RootLayout({
@@ -36,9 +44,13 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={`${inter.variable} ${spaceGrotesk.variable} ${barlowCondensed.variable} h-full scroll-smooth`}
+      className={`${inter.variable} ${spaceGrotesk.variable} ${barlowCondensed.variable} h-full`}
     >
-      <body suppressHydrationWarning className="min-h-full flex flex-col bg-space-bg text-gray-100 font-sans antialiased">
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col font-sans antialiased"
+        style={{ background: "oklch(0.97 0.004 85)", color: "oklch(0.12 0.008 260)" }}
+      >
         {children}
       </body>
     </html>

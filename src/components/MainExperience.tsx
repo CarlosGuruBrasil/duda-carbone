@@ -92,49 +92,44 @@ export default function MainExperience() {
   }, []);
 
   return (
-    <div className="relative min-h-screen bg-[#f7f6f4] text-[#111111] selection:bg-rose-100 selection:text-[#c8384e] overflow-hidden">
-      {/* Elemento de Cursor Customizado (Carregado apenas em telas grandes/desktops) */}
+    <div className="relative min-h-screen overflow-hidden" style={{ background: "var(--background)", color: "var(--foreground)" }}>
+      {/* Cursor customizado — apenas desktop */}
       <div className="hidden lg:block">
-        {/* Bola de tênis central */}
+        {/* Bola de tênis */}
         <div
           ref={cursorDotRef}
-          className="fixed top-0 left-0 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-all duration-150 ease-out"
+          className="fixed top-0 left-0 pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2"
           style={{
             width: isHovering ? "36px" : "26px",
             height: isHovering ? "36px" : "26px",
+            transition: "width 150ms cubic-bezier(0.16,1,0.3,1), height 150ms cubic-bezier(0.16,1,0.3,1)",
+            willChange: "transform",
           }}
         >
           <svg
             viewBox="0 0 100 100"
             className="w-full h-full drop-shadow-[0_2px_6px_rgba(0,0,0,0.35)]"
           >
-            {/* Base da bola - Amarelo/Verde limão de tênis */}
-            <circle cx="50" cy="50" r="46" fill="#ccff00" stroke="#a0cc00" strokeWidth="2.5" />
-            {/* Linhas (costuras) brancas da bola de tênis */}
-            <path
-              d="M 28 8 A 45 45 0 0 0 28 92"
-              fill="none"
-              stroke="#ffffff"
-              strokeWidth="5.5"
-              strokeLinecap="round"
-            />
-            <path
-              d="M 72 8 A 45 45 0 0 1 72 92"
-              fill="none"
-              stroke="#ffffff"
-              strokeWidth="5.5"
-              strokeLinecap="round"
-            />
+            <circle cx="50" cy="50" r="46" fill="oklch(0.82 0.22 130)" stroke="oklch(0.72 0.20 130)" strokeWidth="2.5" />
+            <path d="M 28 8 A 45 45 0 0 0 28 92" fill="none" stroke="#ffffff" strokeWidth="5.5" strokeLinecap="round" />
+            <path d="M 72 8 A 45 45 0 0 1 72 92" fill="none" stroke="#ffffff" strokeWidth="5.5" strokeLinecap="round" />
           </svg>
         </div>
         {/* Ring externo */}
         <div
           ref={cursorOutlineRef}
-          className={`fixed top-0 left-0 rounded-full pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-all duration-150 ${
-            isHovering
-              ? "w-14 h-14 border border-[#ccff00]/65 bg-[#ccff00]/5 shadow-[0_0_12px_rgba(204,255,0,0.2)]"
-              : "w-9 h-9 border border-[#a0cc00]/25 bg-[#a0cc00]/2"
-          }`}
+          className="fixed top-0 left-0 rounded-full pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2"
+          style={{
+            width: isHovering ? "56px" : "36px",
+            height: isHovering ? "56px" : "36px",
+            border: isHovering
+              ? "1px solid oklch(0.82 0.22 130 / 0.65)"
+              : "1px solid oklch(0.82 0.22 130 / 0.25)",
+            background: isHovering ? "oklch(0.82 0.22 130 / 0.05)" : "transparent",
+            boxShadow: isHovering ? "0 0 12px oklch(0.82 0.22 130 / 0.2)" : "none",
+            transition: "width 150ms cubic-bezier(0.16,1,0.3,1), height 150ms cubic-bezier(0.16,1,0.3,1), border-color 150ms ease, box-shadow 150ms ease",
+            willChange: "transform",
+          }}
         />
       </div>
 

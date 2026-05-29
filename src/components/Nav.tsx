@@ -9,7 +9,7 @@ export default function Nav() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setIsScrolled(window.scrollY > 50);
+    const handleScroll = () => setIsScrolled(window.scrollY > 40);
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -36,11 +36,21 @@ export default function Nav() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 px-6 transition-all duration-300 ${
-        isScrolled
-          ? "bg-white/95 backdrop-blur-xl border-b border-black/7 py-3 shadow-[0_1px_20px_rgba(0,0,0,0.06)]"
-          : "bg-transparent py-5"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+      style={{
+        padding: isScrolled ? "0.75rem 1.5rem" : "1.25rem 1.5rem",
+        background: isScrolled
+          ? "oklch(0.96 0.008 260 / 0.95)"
+          : "transparent",
+        borderBottom: isScrolled
+          ? "1px solid oklch(0.88 0.004 260)"
+          : "1px solid transparent",
+        backdropFilter: isScrolled ? "blur(20px)" : "none",
+        boxShadow: isScrolled
+          ? "0 1px 24px oklch(0.12 0.008 260 / 0.05)"
+          : "none",
+        transition: "padding 300ms cubic-bezier(0.16, 1, 0.3, 1), background 300ms cubic-bezier(0.16, 1, 0.3, 1), border-color 300ms ease, box-shadow 300ms ease",
+      }}
     >
       <div className="max-w-7xl mx-auto flex items-center justify-between">
 
@@ -49,30 +59,27 @@ export default function Nav() {
           href="#home"
           onClick={(e) => handleLinkClick(e, "home")}
           className="flex items-center gap-2 group"
+          aria-label="XRL Sports – início"
         >
-          <div className="relative h-8 w-36">
+          <div className="relative h-7 w-32">
             <Image
               src="/logo_xrl_letras.png"
               alt="XRL Sports"
               fill
               className="object-contain object-left"
-              sizes="144px"
+              sizes="128px"
             />
           </div>
         </a>
 
         {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-1">
+        <div className="hidden md:flex items-center gap-0.5">
           {navLinks.map((link) => (
             <a
               key={link.id}
               href={`#${link.id}`}
               onClick={(e) => handleLinkClick(e, link.id)}
-              className={`font-space text-[11px] font-semibold uppercase tracking-[0.12em] px-3 py-2 rounded-lg transition-all duration-200 ${
-                isScrolled
-                  ? "text-black/55 hover:text-black hover:bg-black/5"
-                  : "text-black/50 hover:text-black hover:bg-black/5"
-              }`}
+              className="nav-link"
             >
               {link.label}
             </a>
@@ -84,17 +91,18 @@ export default function Nav() {
           <a
             href="#patrocinio"
             onClick={(e) => handleLinkClick(e, "patrocinio")}
-            className="hidden md:inline-flex items-center font-space text-[11px] font-bold uppercase tracking-wider text-[#0c1530] bg-[#8ad300] hover:bg-[#79b800] px-5 py-2.5 rounded-full transition-colors shadow-[0_4px_14px_rgba(138,211,0,0.3)] hover:shadow-[0_6px_20px_rgba(138,211,0,0.4)]"
+            className="hidden md:inline-flex btn-primary"
+            style={{ padding: "0.5rem 1.25rem" }}
           >
             Patrocínio
           </a>
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className={`md:hidden p-2 rounded-lg transition-all ${
-              isScrolled ? "text-black/60 hover:bg-black/5" : "text-black/50 hover:bg-black/5"
-            }`}
-            aria-label="Toggle menu"
+            className="md:hidden p-2 rounded-lg transition-colors"
+            style={{ color: "oklch(0.45 0.008 260)" }}
+            aria-label={isMobileMenuOpen ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={isMobileMenuOpen}
           >
             {isMobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
           </button>
@@ -103,18 +111,24 @@ export default function Nav() {
 
       {/* Mobile menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-white/98 backdrop-blur-2xl border-b border-black/7 py-5 px-6 flex flex-col gap-2 shadow-lg transition-all duration-300 origin-top ${
-          isMobileMenuOpen
-            ? "opacity-100 scale-y-100 pointer-events-auto"
-            : "opacity-0 scale-y-95 pointer-events-none"
-        }`}
+        className="md:hidden absolute top-full left-0 right-0 py-5 px-6 flex flex-col gap-1 transition-all duration-200 origin-top"
+        style={{
+          background: "oklch(1 0 0 / 0.98)",
+          borderBottom: "1px solid oklch(0.88 0.004 260)",
+          backdropFilter: "blur(24px)",
+          boxShadow: "0 8px 32px oklch(0.12 0.008 260 / 0.08)",
+          opacity: isMobileMenuOpen ? 1 : 0,
+          transform: isMobileMenuOpen ? "scaleY(1)" : "scaleY(0.96)",
+          pointerEvents: isMobileMenuOpen ? "auto" : "none",
+        }}
       >
         {navLinks.map((link) => (
           <a
             key={link.id}
             href={`#${link.id}`}
             onClick={(e) => handleLinkClick(e, link.id)}
-            className="font-space text-sm font-semibold uppercase tracking-wider text-black/55 hover:text-black hover:bg-black/4 py-3 px-4 rounded-xl transition-all"
+            className="font-space text-sm font-semibold uppercase tracking-wider py-3 px-4 rounded-xl transition-all"
+            style={{ color: "oklch(0.45 0.008 260)" }}
           >
             {link.label}
           </a>
@@ -122,7 +136,7 @@ export default function Nav() {
         <a
           href="#patrocinio"
           onClick={(e) => handleLinkClick(e, "patrocinio")}
-          className="font-space text-center font-bold uppercase tracking-wider text-[#0c1530] bg-[#8ad300] hover:bg-[#79b800] py-3.5 rounded-full mt-2 active:scale-95 transition-all"
+          className="btn-primary justify-center mt-2"
         >
           Patrocínio
         </a>
