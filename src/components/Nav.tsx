@@ -44,8 +44,8 @@ export default function Nav() {
       <div className="max-w-7xl mx-auto flex items-center justify-between">
         {/* Logo */}
         <a href="#home" onClick={(e) => scrollTo(e, "home")} className="flex items-center gap-3">
-          <div className="relative h-8 w-28">
-            <Image src="/logo_xrl_letras.png" alt="XRL Sports" fill className="object-contain object-left brightness-0 invert" sizes="112px" />
+          <div className="relative h-10 w-40">
+            <Image src="/logo_xrl_letras.png" alt="XRL Sports" fill className="object-contain object-left" sizes="160px" />
           </div>
         </a>
 

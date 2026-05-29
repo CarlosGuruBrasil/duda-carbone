@@ -38,8 +38,8 @@ export default function Footer() {
 
           {/* Brand */}
           <div>
-            <div className="relative h-7 w-28 mb-5">
-              <Image src="/logo_xrl_letras.png" alt="XRL Sports" fill className="object-contain object-left brightness-0 invert opacity-60" sizes="112px" />
+            <div className="relative h-8 w-32 mb-5">
+              <Image src="/logo_xrl_letras.png" alt="XRL Sports" fill className="object-contain object-left opacity-70" sizes="128px" />
             </div>
             <p className="text-sm leading-relaxed max-w-xs mb-6" style={{ color: "oklch(0.40 0.008 260)" }}>
               Gestão esportiva de alta performance. Representando Maria Eduarda Carbone nos circuitos ITF e WTA.
