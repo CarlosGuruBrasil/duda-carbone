@@ -42,49 +42,51 @@ export default function Hero() {
       className="relative min-h-screen overflow-hidden flex flex-col"
       style={{ background: "oklch(0.10 0.04 260)" }}
     >
-      {/* Background image — full bleed, dark overlay */}
-      <div className="absolute inset-0 z-0">
+      {/* Background base — dark navy */}
+      <div className="absolute inset-0 z-0" style={{ background: "oklch(0.10 0.04 260)" }} />
+
+      {/* Duda portrait — PNG com fundo escuro, posicionada à direita */}
+      <div
+        className="absolute inset-y-0 right-0 z-0"
+        style={{ width: "65%", maxWidth: "800px" }}
+        aria-hidden
+      >
         <Image
-          src="/foto_duda_patrocinio.jpeg"
-          alt="Duda Carbone — tenista profissional brasileira"
+          src="/img_portrait.png"
+          alt=""
           fill
           priority
-          className="object-cover"
-          style={{
-            objectPosition: "68% top",
-            filter: "saturate(1.3) contrast(1.08)",
-          }}
-          sizes="100vw"
+          className="object-contain object-right-bottom"
+          style={{ filter: "saturate(1.2) contrast(1.05)" }}
+          sizes="800px"
         />
-        {/* Gradiente — cobre lado esquerdo onde fica o texto, expõe atleta à direita */}
+        {/* Fade esquerda para fundir com o fundo */}
         <div
           className="absolute inset-0"
           style={{
-            background: `
-              linear-gradient(to right,
-                oklch(0.10 0.04 260) 0%,
-                oklch(0.10 0.04 260 / 0.88) 20%,
-                oklch(0.10 0.04 260 / 0.50) 38%,
-                oklch(0.10 0.04 260 / 0.12) 58%,
-                oklch(0.10 0.04 260 / 0) 78%
-              ),
-              linear-gradient(to top,
-                oklch(0.10 0.04 260) 0%,
-                oklch(0.10 0.04 260 / 0.4) 14%,
-                oklch(0.10 0.04 260 / 0) 35%
-              )
-            `,
+            background: `linear-gradient(to right,
+              oklch(0.10 0.04 260) 0%,
+              oklch(0.10 0.04 260 / 0.7) 15%,
+              oklch(0.10 0.04 260 / 0.15) 40%,
+              oklch(0.10 0.04 260 / 0) 65%
+            )`,
           }}
         />
-        {/* Lime glow on athlete */}
+        {/* Fade inferior sutil */}
         <div
-          className="absolute bottom-0 right-[20%] w-[400px] h-[400px] pointer-events-none"
+          className="absolute bottom-0 left-0 right-0 h-32"
           style={{
-            background: "radial-gradient(ellipse, oklch(0.84 0.22 130 / 0.08) 0%, transparent 70%)",
+            background: `linear-gradient(to top, oklch(0.10 0.04 260 / 0.6), oklch(0.10 0.04 260 / 0))`,
           }}
-          aria-hidden
         />
       </div>
+
+      {/* Lime glow atrás da atleta */}
+      <div
+        className="absolute bottom-0 right-[10%] w-[500px] h-[500px] pointer-events-none z-0"
+        style={{ background: "radial-gradient(ellipse, oklch(0.84 0.22 130 / 0.06) 0%, transparent 65%)" }}
+        aria-hidden
+      />
 
       {/* Content */}
       <div className="relative z-10 flex-1 flex flex-col max-w-7xl mx-auto px-6 md:px-12 w-full">
