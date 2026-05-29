@@ -49,26 +49,26 @@ export default function Hero() {
           alt="Duda Carbone — tenista profissional brasileira"
           fill
           priority
-          className="object-cover object-[72%_top]"
-          style={{ filter: "saturate(1.25) contrast(1.08)" }}
+          className="object-cover object-[55%_top]"
+          style={{ filter: "saturate(1.3) contrast(1.08)" }}
           sizes="100vw"
         />
-        {/* Multi-layer gradient — less coverage on right so photo is more visible */}
+        {/* Gradiente — cobre apenas o lado esquerdo, deixando atleta exposta */}
         <div
           className="absolute inset-0"
           style={{
             background: `
               linear-gradient(to right,
                 oklch(0.10 0.04 260) 0%,
-                oklch(0.10 0.04 260 / 0.82) 28%,
-                oklch(0.10 0.04 260 / 0.38) 52%,
-                oklch(0.10 0.04 260 / 0.08) 72%,
-                oklch(0.10 0.04 260 / 0) 100%
+                oklch(0.10 0.04 260 / 0.85) 22%,
+                oklch(0.10 0.04 260 / 0.45) 42%,
+                oklch(0.10 0.04 260 / 0.10) 60%,
+                oklch(0.10 0.04 260 / 0) 80%
               ),
               linear-gradient(to top,
                 oklch(0.10 0.04 260) 0%,
-                oklch(0.10 0.04 260 / 0.5) 18%,
-                oklch(0.10 0.04 260 / 0) 45%
+                oklch(0.10 0.04 260 / 0.4) 15%,
+                oklch(0.10 0.04 260 / 0) 38%
               )
             `,
           }}
